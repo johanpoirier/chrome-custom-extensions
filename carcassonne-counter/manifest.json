@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Carcassonne tile counter",
+  "description": "Carcassonne statistical tool",
+  "version": "0.3",
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "tiles.js",
+        "tools.js",
+        "counter.js"
+      ],
+      "matches": [
+        "https://boardgamearena.com/*"
+      ]
+    },
+    {
+      "css": [ "counter.css" ],
+      "matches": [ "https://boardgamearena.com/*" ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "tiles/*.png"
+      ],
+      "matches": [ "https://boardgamearena.com/*" ]
+    }
+  ]
+}
