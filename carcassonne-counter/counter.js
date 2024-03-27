@@ -1,16 +1,16 @@
 const BOARD_DIV_ID = 'map_scrollable_oversurface';
 
-// build board tile list
-let tiles = basicTiles;
-if (isGameWithInnsAndCathedrals()) {
-    tiles = tiles.concat(innsCathedralsTiles)
-}
-if (isGameWithTradersAndBuilders()) {
-    tiles = tiles.concat(tradersBuildersTiles)
-}
-
 // wait for the game to be ready
 onElementAvailable(`#${BOARD_DIV_ID}`, () => {
+    // build board tile list
+    let tiles = basicTiles;
+    if (isGameWithInnsAndCathedrals()) {
+        tiles = tiles.concat(innsCathedralsTiles)
+    }
+    if (isGameWithTradersAndBuilders()) {
+        tiles = tiles.concat(tradersBuildersTiles)
+    }
+
     // initial count
     countTiles(tiles)
 

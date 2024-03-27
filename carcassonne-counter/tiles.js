@@ -176,13 +176,61 @@ const innsCathedralsTiles = [
         qty: 1,
         bgaIds: [77]
     },
+    {
+        type: 'EF',
+        image: 'inns_tile_EF.png',
+        qty: 1,
+        bgaIds: [78]
+    },
+    {
+        type: 'EG',
+        image: 'inns_tile_EG.png',
+        qty: 1,
+        bgaIds: [79]
+    },
+    {
+        type: 'EH',
+        image: 'inns_tile_EH.png',
+        qty: 1,
+        bgaIds: [80]
+    },
+    {
+        type: 'EI',
+        image: 'inns_tile_EI.png',
+        qty: 1,
+        bgaIds: [90]
+    },
+    {
+        type: 'EJ',
+        image: 'inns_tile_EJ.png',
+        qty: 1,
+        bgaIds: [74]
+    },
+    {
+        type: 'EK',
+        image: 'inns_tile_EK.png',
+        qty: 1,
+        bgaIds: [81, 82]
+    },
+    {
+        type: 'EL',
+        image: 'inns_tile_EL.png',
+        qty: 1,
+        bgaIds: [85]
+    },
 ]
 
 const tradersBuildersTiles = [
     {
-        type: 'HA',
-        image: 'traders_tile_HA.png',
+        type: 'HS',
+        image: 'traders_tile_HS.png',
         qty: 1,
-        bgaIds: []
+        bgaIds: [91]
+    },
+    {
+        type: 'HT',
+        image: 'traders_tile_HT.png',
+        qty: 1,
+        bgaIds: [96]
     },
 ]
