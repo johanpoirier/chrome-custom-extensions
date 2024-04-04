@@ -1,16 +1,35 @@
-.carcassonne-counter--infos {
+.carcassonne-counter {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     left: 0;
-    max-width: 100vw;
-    padding: 2px;
     position: fixed;
     top: 0;
+    z-index: 10000;
+}
+
+.carcassonne-counter__button {
+    background-color: #9898ff;
+    color: white;
+    font-size: 2em;
+    height: 1em;
+    margin: 0.1em;
+    width: 1em;
+}
+
+.carcassonne-counter__tiles {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100vw;
+    padding: 2px;
+    position: relative;
     width: 100vw;
 }
 
-.carcassonne-counter--tile-container {
+.expand .carcassonne-counter__tiles {
+    display: flex;
+}
+
+.carcassonne-counter__tile-container {
     height: 50px;
     position: relative;
     transition: transform 300ms ease-in-out;
@@ -18,7 +37,7 @@
     z-index: 1;
 }
 
-.carcassonne-counter--tile-container:after {
+.carcassonne-counter__tile-container:after {
     box-shadow: 0 0 10px -1px #000000;
     color: white;
     content: attr(data-remaining);
@@ -27,12 +46,12 @@
     top: 2px;
 }
 
-.carcassonne-counter--tile-container img {
+.carcassonne-counter__tile-container img {
     height: 100%;
     width: 100%;
 }
 
-.carcassonne-counter--tile-container:hover {
+.carcassonne-counter__tile-container:hover {
     transform: scale(1.65) translateY(10px);
     z-index: 2;
 }
