@@ -1,6 +1,7 @@
 const TILE_TYPES = {
     CCCC: 'CCCC',
     CCFC: 'CCFC',
+    CCFF: 'CCFF',
     CCRC: 'CCRC',
     CCRF: 'CCRF',
     CFCF: 'CFCF',
@@ -13,13 +14,16 @@ const TILE_TYPES = {
     CRFC: 'CRFC',
     CRRC: 'CRRC',
     CRRF: 'CRRF',
+    CRRR: 'CRRR',
     FCCC: 'FCCC',
     FCFC: 'FCFC',
     FCRC: 'FCRC',
     FFFF: 'FFFF',
     FFRF: 'FFRF',
+    FFRR: 'FFRR',
     FRRR: 'FRRR',
     RCRC: 'RCRC',
+    RFRF: 'RFRF',
     RRRR: 'RRRR',
     XXXX: 'XXXX',
 }
@@ -107,89 +111,91 @@ const basicTiles = [
         image: 'basic_tile_L.png',
         qty: 3,
         bgaIds: [33, 34, 35],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CRRR
     },
     {
         id: 'M',
         image: 'basic_tile_M.png',
         qty: 2,
         bgaIds: [7, 8],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CCFF
     },
     {
         id: 'N',
         image: 'basic_tile_N.png',
         qty: 3,
         bgaIds: [4, 5, 6],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CCFF
     },
     {
         id: 'O',
         image: 'basic_tile_O.png',
         qty: 2,
         bgaIds: [12, 13],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CRRC
     },
     {
         id: 'P',
         image: 'basic_tile_P.png',
         qty: 3,
         bgaIds: [9, 10, 11],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CRRC
     },
     {
         id: 'Q',
         image: 'basic_tile_Q.png',
         qty: 1,
         bgaIds: [72],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CCFC
     },
     {
         id: 'R',
         image: 'basic_tile_R.png',
         qty: 3,
         bgaIds: [69, 70, 71],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CCFC
     },
     {
         id: 'S',
         image: 'basic_tile_S.png',
         qty: 2,
         bgaIds: [2, 3],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CCRC
     },
     {
         id: 'T',
         image: 'basic_tile_T.png',
         qty: 1,
         bgaIds: [1],
+        type: TILE_TYPES.CCRC
     },
     {
         id: 'U',
         image: 'basic_tile_U.png',
         qty: 8,
         bgaIds: [40, 41, 42, 43, 44, 45, 46, 47],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.RFRF
     },
     {
         id: 'V',
         image: 'basic_tile_V.png',
         qty: 9,
         bgaIds: [48, 49, 50, 51, 52, 53, 54, 55, 56],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.FFRR
     },
     {
         id: 'W',
         image: 'basic_tile_W.png',
         qty: 4,
         bgaIds: [57, 58, 59, 60],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.FRRR
     },
     {
         id: 'X',
         image: 'basic_tile_X.png',
         qty: 1,
-        bgaIds: [61]
+        bgaIds: [61],
+        type: TILE_TYPES.RRRR
     }
 ]
 
@@ -199,119 +205,119 @@ const innsCathedralsTiles = [
         image: 'inns_tile_EA.png',
         qty: 1,
         bgaIds: [73],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.FFRR
     },
     {
         id: 'EB',
         image: 'inns_tile_EB.png',
         qty: 1,
         bgaIds: [83],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.RFRF
     },
     {
         id: 'EC',
         image: 'inns_tile_EC.png',
         qty: 1,
         bgaIds: [84],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.FRRR
     },
     {
         id: 'ED',
         image: 'inns_tile_ED.png',
         qty: 1,
         bgaIds: [76],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.RFRF
     },
     {
         id: 'EE',
         image: 'inns_tile_EE.png',
         qty: 1,
         bgaIds: [77],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.RRRR
     },
     {
         id: 'EF',
         image: 'inns_tile_EF.png',
         qty: 1,
         bgaIds: [78],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CRFC
     },
     {
         id: 'EG',
         image: 'inns_tile_EG.png',
         qty: 1,
         bgaIds: [79],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CFFF
     },
     {
         id: 'EH',
         image: 'inns_tile_EH.png',
         qty: 1,
         bgaIds: [80],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CCCC
     },
     {
         id: 'EI',
         image: 'inns_tile_EI.png',
         qty: 1,
         bgaIds: [90],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.RCRC
     },
     {
         id: 'EJ',
         image: 'inns_tile_EJ.png',
         qty: 1,
         bgaIds: [74],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CFRF
     },
     {
         id: 'EK',
         image: 'inns_tile_EK.png',
         qty: 1,
         bgaIds: [81, 82],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CCCC
     },
     {
         id: 'EL',
         image: 'inns_tile_EL.png',
         qty: 1,
         bgaIds: [85],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CRRC
     },
     {
         id: 'EM',
         image: 'inns_tile_EM.png',
         qty: 1,
         bgaIds: [86],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CFRR
     },
     {
         id: 'EN',
         image: 'inns_tile_EN.png',
         qty: 1,
         bgaIds: [87],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CFRC
     },
     {
         id: 'EO',
         image: 'inns_tile_EO.png',
         qty: 1,
         bgaIds: [89],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CCFC
     },
     {
         id: 'EP',
         image: 'inns_tile_EP.png',
         qty: 1,
         bgaIds: [88],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.CCFC
     },
     {
         id: 'EQ',
         image: 'inns_tile_EQ.png',
         qty: 1,
         bgaIds: [75],
-        type: TILE_TYPES.XXXX
+        type: TILE_TYPES.RCRC
     },
 ]
 
