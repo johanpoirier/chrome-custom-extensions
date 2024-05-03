@@ -7,22 +7,29 @@
 }
 
 .carcassonne-counter__button {
-    background-color: #9898ff;
-    color: white;
+    background-color: #ffffff;
+    border-radius: 0.2em;
+    border: 2px solid #009ddb;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
     font-size: 2em;
     height: 1em;
+    line-height: 1em;
     margin: 0.1em;
     width: 1em;
+}
+
+
+.carcassonne-counter__button img {
+    width: 0.8em;
 }
 
 .carcassonne-counter__tiles {
     display: none;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 100vw;
-    padding: 2px;
+    padding: 0;
     position: relative;
-    width: 100vw;
+    width: calc(100vw - 2em);
 }
 
 .expand .carcassonne-counter__tiles {

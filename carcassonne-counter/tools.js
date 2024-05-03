@@ -1,5 +1,6 @@
 const CARCASSONNE_COUNTER_CONTAINER_ID = 'carcassonne-counter';
 const CARCASSONNE_COUNTER_EXPAND_CLASSNAME = 'expand'
+
 const TILE_SELECTOR = 'div.bdtile';
 const INNS_AND_CATHEDRALS_CLASS_NAME = 'carcassonne_exp1';
 const TRADERS_AND_BUILDERS_CLASS_NAME = 'carcassonne_exp2';
@@ -14,7 +15,6 @@ function isGameWithTradersAndBuilders() {
 
 function countTiles(basicTiles) {
     const playedTilesIds = getTilesIds(document.querySelectorAll(TILE_SELECTOR))
-    const tilesInfosDiv = getTilesInfoDiv()
     const data = basicTiles.map((tile) => {
         const remainingQty = tile.bgaIds.filter((id) => !playedTilesIds.includes(id)).length
         return {
@@ -23,7 +23,7 @@ function countTiles(basicTiles) {
             odd: (Math.round(1000 * remainingQty / playedTilesIds.length)) / 10
         }
     })
-    generateTilesInfos(data, tilesInfosDiv)
+    generateTilesInfos(data, getCountersTilesDiv())
 }
 
 function generateTilesInfos(data, container) {
@@ -46,7 +46,7 @@ function getTilesIds(tileElements) {
     }).filter((id) => id > 0)
 }
 
-function getTilesInfoDiv() {
+function getCountersTilesDiv() {
     let carcassonneCounterTiles = document.querySelector('.carcassonne-counter__tiles')
     let caracassonneCounterContainer = document.getElementById(CARCASSONNE_COUNTER_CONTAINER_ID)
     if (!caracassonneCounterContainer) {
@@ -54,32 +54,48 @@ function getTilesInfoDiv() {
         caracassonneCounterContainer.id = CARCASSONNE_COUNTER_CONTAINER_ID
         caracassonneCounterContainer.className = 'carcassonne-counter'
 
-        const carcassonneCounterButton = document.createElement('button');
-        carcassonneCounterButton.className = 'carcassonne-counter__button'
-        carcassonneCounterButton.textContent = '+'
-        carcassonneCounterButton.addEventListener('click', function () {
-            if (caracassonneCounterContainer.classList.contains(CARCASSONNE_COUNTER_EXPAND_CLASSNAME)) {
-                caracassonneCounterContainer.classList.remove(CARCASSONNE_COUNTER_EXPAND_CLASSNAME)
-            } else {
-                caracassonneCounterContainer.classList.add(CARCASSONNE_COUNTER_EXPAND_CLASSNAME)
-            }
-        })
-        caracassonneCounterContainer.appendChild(carcassonneCounterButton)
+        caracassonneCounterContainer.appendChild(createMainButton(caracassonneCounterContainer))
 
-        carcassonneCounterTiles = document.createElement('div');
-        carcassonneCounterTiles.className = 'carcassonne-counter__tiles'
+        carcassonneCounterTiles = createCounterTilesDiv()
         caracassonneCounterContainer.appendChild(carcassonneCounterTiles)
 
         document.body.appendChild(caracassonneCounterContainer)
     }
+
     return carcassonneCounterTiles
+}
+
+function createCounterTilesDiv() {
+    const counterTiles = document.createElement('div');
+    counterTiles.className = 'carcassonne-counter__tiles'
+
+    return counterTiles
+}
+
+function createMainButton(container) {
+    const button = document.createElement('button');
+    button.className = 'carcassonne-counter__button'
+    button.addEventListener('click', function () {
+        if (container.classList.contains(CARCASSONNE_COUNTER_EXPAND_CLASSNAME)) {
+            container.classList.remove(CARCASSONNE_COUNTER_EXPAND_CLASSNAME)
+        } else {
+            container.classList.add(CARCASSONNE_COUNTER_EXPAND_CLASSNAME)
+        }
+    })
+
+    const img = document.createElement('img');
+    img.src = chrome.runtime.getURL(`assets/blue-meeple.png`)
+
+    button.appendChild(img)
+
+    return button
 }
 
 function createImage(filename) {
     const imgContainer = document.createElement('div');
     imgContainer.className = 'carcassonne-counter__tile-container'
     const img = document.createElement('img');
-    img.src = chrome.runtime.getURL(`tiles/${filename}`)
+    img.src = chrome.runtime.getURL(`assets/${filename}`)
     img.style.alt = filename
     imgContainer.appendChild(img)
     return imgContainer
